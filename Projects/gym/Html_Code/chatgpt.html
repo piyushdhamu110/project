@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piyush's Fitness</title>
+  <style>
+    body {
+      color: #333;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url("../imgp/background.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #222;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .left img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .left div {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .mid ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar li {
+      margin-right: 20px;
+      font-size: 18px;
+    }
+
+    .navbar li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+
+    .navbar li a:hover {
+      color: #6cc0e5;
+    }
+
+    .right button {
+      margin-right: 10px;
+      color: #fff;
+      background-color: #333;
+      padding: 10px 22px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .right button:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      margin: 50px auto;
+      padding: 29px;
+      width: 60%;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h4 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .form-group input {
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      border: 2px solid #333;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .container button {
+      margin-top: 30px;
+      padding: 10px 0;
+      width: 80%;
+      border: 2px solid #333;
+      background-color: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container button:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Responsive Design */
+    @media only screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left {
+        margin-bottom: 20px;
+      }
+
+      .right {
+        position: static;
+        margin-top: 20px;
+      }
+
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <!-- left box for logo -->
+    <div class="left">
+      <img src="../imgp/logo.png" alt="" />
+      <div>Fitness</div>
+    </div>
+    <!-- mid box for navigation bar -->
+    <div class="mid">
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Fitness Calculator</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <!-- right box for buttons -->
+    <div class="right">
+      <button class="btn">Call Us</button>
+      <button class="btn">Email Us</button>
+    </div>
+  </header>
+  <div class="container">
+    <h4>Ram Ram</h4>
+    <form action="noaction.php">
+      <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Name" />
+      </div>
+      <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Age" />
+      </div>
+      <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Gender" />
+      </div>
+      <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Locality" />
+      </div>
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>

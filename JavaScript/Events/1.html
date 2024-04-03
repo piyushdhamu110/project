@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML EVENTS</title>
+  </head>
+  <body style="background-color: rgba(8, 0, 0, 0.76); color: white">
+    <h2>Amaxing Pictures</h2>
+    <div id="images">
+      <li>
+        <img width="200px" id="BlackRoad" src="../img/BlackRoad.jpg" alt="" />
+      </li>
+      <li><img width="200px" id="trees" src="../img/trees.jpg" alt="" /></li>
+      <li><img width="200px" id="river" src="../img/river.jpg" alt="" /></li>
+      <li>
+        <img width="200px" id="scenery" src="../img/scenery.jpg" alt="" />
+      </li>
+      <li>
+        <img
+          width="200px"
+          id="TreeWithSun"
+          src="../img/TreeWithSun.jpg"
+          alt=""
+          onclick="alert('Tress With Sun')"
+        />
+      </li>
+      <li>
+        <a
+          style="font-size: 50px; color: aquamarine"
+          href="https://google.com"
+          id="google"
+          >Google</a
+        >
+      </li>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("BlackRoad").onclick = function () {
+    //   alert("Road pe chlte rhe");
+    // }; //it is not a good approach
+
+    // document.getElementById("BlackRoad").addEventListener(
+    //   "click",
+    //   function () {
+    //     alert("Road pe chlte rhe");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("BlackRoad").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log(event);
+    //   },
+    //   false
+    // );
+
+    // read about
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log("clicked inside the ul");
+    //   },
+    //   false // --> bubbling --> goes from inside to outside
+    //   //true --> goes from outside to inside
+    // );
+
+    // document.getElementById("river").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log("Float inside river");
+    //     event.stopPropagation();
+    //   },
+    //   false // true
+    // );
+
+    // // false --> output --> Float inside river --> clicked inside the ul
+    // // true --> output --> clicked inside the ul --> Float inside river
+
+    // document.getElementById("google").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     event.preventDefault(); // it doesn't allow to go on google link
+    //     event.stopPropagation(); // it don't allow to bubbling
+    //     console.log("Google clicked");
+    //   },
+    //   false
+    // );
+
+    // ACTIVITY
+
+    // TO DISAPPEAR/REMOVE THE IMAGES ON CLICKING ON THEM
+
+    document.querySelector("#images").addEventListener(
+      "click",
+      function (event) {
+        console.log(event.target.parentNode);
+        console.log(event.target.tagName);
+
+        if (event.target.tagName === "IMG") {
+          let disapper = event.target.parentNode;
+          disapper.remove();
+          // removeIt.parentNode.removeChild(removeIt)
+        }
+      },
+      false
+    );
+  
+  </script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API REQUEST</title>
+  </head>
+  <body style="background-color: antiquewhite">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Value</th>
+            <th>State</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>0</code></td>
+            <td><code>UNSENT</code></td>
+            <td>
+              Client has been created. <code>open()</code> not called yet.
+            </td>
+          </tr>
+          <tr>
+            <td><code>1</code></td>
+            <td><code>OPENED</code></td>
+            <td><code>open()</code> has been called.</td>
+          </tr>
+          <tr>
+            <td><code>2</code></td>
+            <td><code>HEADERS_RECEIVED</code></td>
+            <td>
+              <code>send()</code> has been called, and headers and status are
+              available.
+            </td>
+          </tr>
+          <tr>
+            <td><code>3</code></td>
+            <td><code>LOADING</code></td>
+            <td>Downloading; <code>responseText</code> holds partial data.</td>
+          </tr>
+          <tr>
+            <td><code>4</code></td>
+            <td><code>DONE</code></td>
+            <td>The operation is complete.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <style>
+    table,
+    tr,
+    td,
+    th {
+      border: 2px solid black;
+      font-size: larger;
+    }
+  </style>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+
+        let data = this.responseText;
+
+        console.log("Data type before Conversion:", typeof data);
+        // datatype of this.responseText is String not an Object
+
+        data = JSON.parse(data);
+        // So for fetching the data, we have to convert it into an object first by using JSON.parse
+        // JSON.parse will convert string into object
+
+        console.log("Data type after conversion:", typeof data);
+        
+        console.log(data);
+        console.log(data.name);
+        console.log(data.followers);
+        console.log(data.avatar_url);
+      }
+    };
+    xhr.send();
+
+    // const xhr = new XMLHttpRequest();
+    // console.log("UNSENT", xhr.readyState); // readyState will be 0
+
+    // xhr.open("GET", requestUrl, true);
+    // console.log("OPENED", xhr.readyState); // readyState will be 1
+
+    // xhr.onprogress = () => {
+    //   console.log("LOADING", xhr.readyState); // readyState will be 3
+    // };
+
+    // xhr.onload = () => {
+    //   console.log("DONE", xhr.readyState); // readyState will be 4
+    // };
+
+    // xhr.send(null);
+  </script>
+</html>
