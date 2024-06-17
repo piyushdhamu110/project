@@ -1,19 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int factorial(int n)
+{
+
+    // Base Condition.
+    if (n == 0)
+    {
+        return 1;
+    }
+
+    // Problem broken down into 2 parts and then combined.
+    return n * factorial(n - 1);
+}
+
 int main()
 {
 
-    int x = 709;
-    int cnt = __builtin_popcount(x);
-
-    cout << cnt << endl;
-
-    string s = "piyush";
-
-    do
-    {
-        cout << s << endl;
-    } while (next_permutation(s.begin(),s.end()));
-    
+    // Here, let’s take the value of n to be 3.
+    int n = 20;
+    cout << factorial(n) << endl;
+    return 0;
 }

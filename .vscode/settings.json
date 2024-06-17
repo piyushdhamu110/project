@@ -2,6 +2,13 @@
     "files.associations": {
         "iostream": "cpp",
         "random": "cpp",
-        "bitset": "cpp"
-    }
+        "bitset": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp",
+        "iosfwd": "cpp"
+    },
+    "java.debug.settings.onBuildFailureProceed": true
 }
